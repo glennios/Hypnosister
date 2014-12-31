@@ -25,7 +25,6 @@
     // add view to window
     CGRect fullWindowRect       = self.window.bounds;
     BNRHypnosisView *firstView  = [[BNRHypnosisView alloc] initWithFrame:fullWindowRect];
-    firstView.backgroundColor   = [UIColor redColor];
     [self.window addSubview:firstView];
     
     return YES;
