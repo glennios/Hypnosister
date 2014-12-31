@@ -30,7 +30,7 @@
     // add 2nd view to window
     BNRHypnosisView *secondView = [[BNRHypnosisView alloc] initWithFrame:CGRectMake(20, 30, 50, 50)];
     secondView.backgroundColor = [UIColor blueColor];
-    [self.window addSubview:secondView];
+    [firstView addSubview:secondView];
     
     return YES;
 }
