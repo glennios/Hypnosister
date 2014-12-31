@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BNRHypnosisView.h"
 
 @interface AppDelegate ()
 

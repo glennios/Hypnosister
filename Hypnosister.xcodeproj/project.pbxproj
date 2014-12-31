@@ -14,6 +14,7 @@
 		212D07081A53D3BF00BC8B68 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 212D07071A53D3BF00BC8B68 /* Images.xcassets */; };
 		212D070B1A53D3BF00BC8B68 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 212D07091A53D3BF00BC8B68 /* LaunchScreen.xib */; };
 		212D07171A53D3BF00BC8B68 /* HypnosisterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 212D07161A53D3BF00BC8B68 /* HypnosisterTests.m */; };
+		212D07221A53D8DB00BC8B68 /* BNRHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 212D07211A53D8DB00BC8B68 /* BNRHypnosisView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		212D07101A53D3BF00BC8B68 /* HypnosisterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HypnosisterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		212D07151A53D3BF00BC8B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		212D07161A53D3BF00BC8B68 /* HypnosisterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypnosisterTests.m; sourceTree = "<group>"; };
+		212D07201A53D8DB00BC8B68 /* BNRHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRHypnosisView.h; path = ../BNRHypnosisView.h; sourceTree = "<group>"; };
+		212D07211A53D8DB00BC8B68 /* BNRHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRHypnosisView.m; path = ../BNRHypnosisView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		212D06F91A53D3BF00BC8B68 /* Hypnosister */ = {
 			isa = PBXGroup;
 			children = (
+				212D07201A53D8DB00BC8B68 /* BNRHypnosisView.h */,
+				212D07211A53D8DB00BC8B68 /* BNRHypnosisView.m */,
 				212D06FE1A53D3BF00BC8B68 /* AppDelegate.h */,
 				212D06FF1A53D3BF00BC8B68 /* AppDelegate.m */,
 				212D07011A53D3BF00BC8B68 /* ViewController.h */,
@@ -221,6 +226,7 @@
 			files = (
 				212D07031A53D3BF00BC8B68 /* ViewController.m in Sources */,
 				212D07001A53D3BF00BC8B68 /* AppDelegate.m in Sources */,
+				212D07221A53D8DB00BC8B68 /* BNRHypnosisView.m in Sources */,
 				212D06FD1A53D3BF00BC8B68 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +354,7 @@
 				INFOPLIST_FILE = Hypnosister/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -358,6 +365,7 @@
 				INFOPLIST_FILE = Hypnosister/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
