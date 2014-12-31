@@ -22,15 +22,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    // add 1st view to window
+    // add view to window
     BNRHypnosisView *firstView  = [[BNRHypnosisView alloc] initWithFrame:CGRectMake(160, 240, 100, 100)];
     firstView.backgroundColor   = [UIColor redColor];
     [self.window addSubview:firstView];
-
-    // add 2nd view to window
-    BNRHypnosisView *secondView = [[BNRHypnosisView alloc] initWithFrame:CGRectMake(20, 30, 50, 50)];
-    secondView.backgroundColor = [UIColor blueColor];
-    [firstView addSubview:secondView];
     
     return YES;
 }
