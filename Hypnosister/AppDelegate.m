@@ -15,9 +15,23 @@
 
 @implementation AppDelegate
 
-
+// Override point for customization after application launch.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // window setup
+    self.window                 = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    // add 1st view to window
+    BNRHypnosisView *firstView  = [[BNRHypnosisView alloc] initWithFrame:CGRectMake(160, 240, 100, 100)];
+    firstView.backgroundColor   = [UIColor redColor];
+    [self.window addSubview:firstView];
+
+    // add 2nd view to window
+    BNRHypnosisView *secondView = [[BNRHypnosisView alloc] initWithFrame:CGRectMake(20, 30, 50, 50)];
+    secondView.backgroundColor = [UIColor blueColor];
+    [self.window addSubview:secondView];
+    
     return YES;
 }
 
