@@ -21,7 +21,7 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     CGRect bounds = self.bounds; // get your own view's bounds
-    float radius  = MIN(bounds.size.width, bounds.size.height) / 2.0;
+    float radius  = hypot(bounds.size.width, bounds.size.height) / 2.0;
 
     // determine center coord
     CGPoint center;
@@ -31,7 +31,12 @@
     // render pathstroke
     UIBezierPath *path = [[UIBezierPath alloc] init];
     path.lineWidth = 10;
-    [path addArcWithCenter:center radius:radius startAngle:0 endAngle:(2.0*M_PI) clockwise:YES];
+
+    for (; radius > 0; radius -= 20) {
+        [path moveToPoint:CGPointMake(center.x + radius, center.y)];
+        [path addArcWithCenter:center radius:radius startAngle:0 endAngle:(2.0*M_PI) clockwise:YES];
+    }
+
     [[UIColor lightGrayColor] setStroke];
     [path stroke];
 }
