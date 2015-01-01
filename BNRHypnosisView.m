@@ -39,6 +39,13 @@
 
     [[UIColor lightGrayColor] setStroke];
     [path stroke];
+    
+    [self drawLogo];
+}
+
+- (void)drawLogo {
+    UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
+    [logoImage drawInRect:CGRectMake(0, 0, 380, 561)];
 }
 
 @end
