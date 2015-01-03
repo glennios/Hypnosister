@@ -47,11 +47,11 @@
     [self.circleColor setStroke];
     [path stroke];
 
-    CGContextRef currentContext = UIGraphicsGetCurrentContext();
-    [self drawLogo:currentContext];
+    [self drawLogo];
 }
 
-- (void)drawLogo:(CGContextRef)currentContext {
+- (void)drawLogo {
+    CGContextRef currentContext = UIGraphicsGetCurrentContext();
     [self startShadow:currentContext];
     
     UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
