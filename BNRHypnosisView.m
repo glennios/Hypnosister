@@ -39,13 +39,31 @@
 
     [[UIColor lightGrayColor] setStroke];
     [path stroke];
-    
+
     [self drawLogo];
 }
 
 - (void)drawLogo {
+    CGContextRef currentContext = UIGraphicsGetCurrentContext();
+    
+    [self startShadow:currentContext];
+    
     UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
     [logoImage drawInRect:CGRectMake(0, 0, 380, 561)];
+    
+    [self stopShadow:currentContext];
+}
+
+- (void)startShadow:(CGContextRef)currentContext {
+    int    blurSz     = 3;
+    CGSize blurOffset = CGSizeMake(4, 7);
+    
+    CGContextSaveGState(currentContext);
+    CGContextSetShadow(currentContext, blurOffset, blurSz);
+}
+
+- (void)stopShadow:(CGContextRef)currentContext {
+    CGContextRestoreGState(currentContext);
 }
 
 @end
