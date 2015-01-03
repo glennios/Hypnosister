@@ -79,4 +79,11 @@
                                        alpha:1.0];
 }
 
+// override setCircleColor for @property (strong, nonatomic) UIColor *circleColor;
+// call setNeedsDisplay so that view is marked "dirty", which causes re-render
+- (void)setCircleColor:(UIColor *)circleColor {
+    _circleColor = circleColor;
+    [self setNeedsDisplay];
+}
+
 @end
