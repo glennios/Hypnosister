@@ -72,4 +72,11 @@
     CGContextRestoreGState(currentContext);
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    self.circleColor = [UIColor colorWithRed:(arc4random() % 100 / 100.0)
+                                       green:(arc4random() % 100 / 100.0)
+                                        blue:(arc4random() % 100 / 100.0)
+                                       alpha:1.0];
+}
+
 @end
