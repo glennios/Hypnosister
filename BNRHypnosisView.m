@@ -40,12 +40,11 @@
     [[UIColor lightGrayColor] setStroke];
     [path stroke];
 
-    [self drawLogo];
+    CGContextRef currentContext = UIGraphicsGetCurrentContext();
+    [self drawLogo:currentContext];
 }
 
-- (void)drawLogo {
-    CGContextRef currentContext = UIGraphicsGetCurrentContext();
-    
+- (void)drawLogo:(CGContextRef)currentContext {
     [self startShadow:currentContext];
     
     UIImage *logoImage = [UIImage imageNamed:@"logo.png"];
