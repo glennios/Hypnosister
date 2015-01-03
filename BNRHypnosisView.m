@@ -17,10 +17,11 @@
 @implementation BNRHypnosisView
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (!self) return nil;
-    self.backgroundColor = [UIColor clearColor];
-    self.circleColor     = [UIColor lightGrayColor];
+    if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor clearColor];
+        self.circleColor     = [UIColor lightGrayColor];
+    }
+
     return self;
 }
 
