@@ -39,6 +39,8 @@
     frame1X.origin.x += frame1X.size.width;
     BNRHypnosisView *hypnoViewRight = [[BNRHypnosisView alloc] initWithFrame:frame1X];
     [scrollView addSubview:hypnoViewRight];
+    //  - tell scrollview to "snap" between hypnoviewleft & hypnoviewright (don't let scroll settle between views)
+    scrollView.pagingEnabled = YES;
     
     return YES;
 }
