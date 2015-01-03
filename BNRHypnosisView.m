@@ -8,12 +8,19 @@
 
 #import "BNRHypnosisView.h"
 
+@interface BNRHypnosisView()
+
+@property (strong, nonatomic) UIColor *circleColor;
+
+@end
+
 @implementation BNRHypnosisView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (!self) return nil;
     self.backgroundColor = [UIColor clearColor];
+    self.circleColor     = [UIColor lightGrayColor];
     return self;
 }
 
@@ -37,7 +44,7 @@
         [path addArcWithCenter:center radius:radius startAngle:0 endAngle:(2.0*M_PI) clockwise:YES];
     }
 
-    [[UIColor lightGrayColor] setStroke];
+    [self.circleColor setStroke];
     [path stroke];
 
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
