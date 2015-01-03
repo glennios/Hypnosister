@@ -17,15 +17,25 @@
 
 // Override point for customization after application launch.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // window setup
+    /* Window setup */
     self.window                 = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    // add view to window
-    CGRect fullWindowRect       = self.window.bounds;
-    BNRHypnosisView *firstView  = [[BNRHypnosisView alloc] initWithFrame:fullWindowRect];
-    [self.window addSubview:firstView];
+    /* Render circles and make it scrollable */
+    //  - declare the bounds of the frame for our child view
+    //  - set the area of the frame to be 4x the viewport area (for scrollability)
+    CGRect frame1X = self.window.bounds;
+    CGRect frame2X = frame1X;
+    frame2X.size.width  *= 2.0;
+    frame2X.size.height *= 2.0;
+    //  - add scroll view to window
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame1X];
+    scrollView.contentSize = frame2X.size;
+    [self.window addSubview:scrollView];
+    //  - add hypnoview to scroll view
+    BNRHypnosisView *hypnoView  = [[BNRHypnosisView alloc] initWithFrame:frame2X];
+    [scrollView addSubview:hypnoView];
     
     return YES;
 }
