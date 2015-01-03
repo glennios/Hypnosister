@@ -22,20 +22,23 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    /* Render circles and make it scrollable */
+    /* Render circles and make it scrollable between views */
     //  - declare the bounds of the frame for our child view
-    //  - set the area of the frame to be 4x the viewport area (for scrollability)
+    //  - set the area of the frame to be 2x the viewport area (for scrollability)
     CGRect frame1X = self.window.bounds;
     CGRect frame2X = frame1X;
-    frame2X.size.width  *= 2.0;
-    frame2X.size.height *= 2.0;
+    frame2X.size.width *= 2.0;
     //  - add scroll view to window
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:frame1X];
     scrollView.contentSize = frame2X.size;
     [self.window addSubview:scrollView];
-    //  - add hypnoview to scroll view
-    BNRHypnosisView *hypnoView  = [[BNRHypnosisView alloc] initWithFrame:frame2X];
-    [scrollView addSubview:hypnoView];
+    //  - add hypnoViewLeft to scroll view
+    BNRHypnosisView *hypnoViewLeft = [[BNRHypnosisView alloc] initWithFrame:frame1X];
+    [scrollView addSubview:hypnoViewLeft];
+    //  - add hypnoViewRight to scroll view (just to the right of hypnoViewLeft)
+    frame1X.origin.x += frame1X.size.width;
+    BNRHypnosisView *hypnoViewRight = [[BNRHypnosisView alloc] initWithFrame:frame1X];
+    [scrollView addSubview:hypnoViewRight];
     
     return YES;
 }
